@@ -1,22 +1,11 @@
 package br.com.abrigosaolazaro.ui.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Pets
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,7 +15,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
@@ -42,7 +30,7 @@ fun ShelterHeader(modifier: Modifier = Modifier) {
             .background(MaterialTheme.colorScheme.primary)
             .padding(horizontal = 20.dp, vertical = 14.dp)
     ) {
-        // Logo: tenta carregar do site, exibe patinha como fallback
+        // Logo circle: ícone de patinha como fundo; Coil carrega por cima
         Box(
             modifier = Modifier
                 .size(48.dp)
@@ -56,6 +44,7 @@ fun ShelterHeader(modifier: Modifier = Modifier) {
                 tint = Color.White,
                 modifier = Modifier.size(30.dp)
             )
+            // Corrigido: alignment = Alignment.CenterStart para focar no brasão
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data("https://abrigosaolazaro.org.br/wp-content/uploads/2020/03/logo-abrigo-sao-lazaro.jpg")
@@ -63,10 +52,10 @@ fun ShelterHeader(modifier: Modifier = Modifier) {
                     .build(),
                 contentDescription = "Logo Abrigo São Lázaro",
                 contentScale = ContentScale.Crop,
+                alignment = Alignment.CenterStart,
                 modifier = Modifier
                     .fillMaxSize()
-                    .clip(CircleShape),
-                alignment = Alignment.CenterStart,
+                    .clip(CircleShape)
             )
         }
         Spacer(modifier = Modifier.width(14.dp))
@@ -86,10 +75,3 @@ fun ShelterHeader(modifier: Modifier = Modifier) {
         }
     }
 }
-
-@Preview
-@Composable
-fun ShelterHeaderPreview() {
-    ShelterHeader()
-}
-//

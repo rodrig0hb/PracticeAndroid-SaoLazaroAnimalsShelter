@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [AnimalEntity::class],
-    version = 1,
+    version  = 1,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -22,7 +22,7 @@ abstract class AppDatabase : RoomDatabase() {
                 Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "abrigo_saolazaro.db"
+                    "abrigo_saolazaro_v2.db"
                 ).build().also { INSTANCE = it }
             }
     }
