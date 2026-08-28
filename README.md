@@ -1,8 +1,8 @@
 # Abrigo São Lázaro – App Android (Não Oficial)
 
 <p align="center">
-  <img src="projeto.gif" alt= "GIF da aplicação desenvolvida." />
-</p> 
+  <img src="projeto.gif" alt= "Gif de fluxo do app" />
+</p>
 
 Projeto desenvolvido para o módulo intermediário e avançado do curso de Android do [**Capacita iRede**](https://capacitabrasil.irede.org.br/).
 
